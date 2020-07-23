@@ -13,7 +13,7 @@ const userRoute = require('./router');
 mongoose.Promise = global.Promise;
 mongoose
   .connect(
-    `mongodb://${process.env.REACT_APP_DB_USER}:${process.env.REACT_APP_DB_PASS}@ds159489.mlab.com:59489/${process.env.REACT_APP_DB_HOST}`,
+    `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds159489.mlab.com:59489/${process.env.DB_HOST}`,
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,
@@ -33,8 +33,8 @@ app.use(
 app.use(cors());
 app.use('/', userRoute);
 
-app.listen(process.env.REACT_APP_PORT, () => {
-  console.log('Connected to port ' + process.env.REACT_APP_PORT);
+app.listen(process.env.PORT, () => {
+  console.log('Connected to port ' + process.env.PORT);
 });
 
 app.use((err, req, res, next) => {
