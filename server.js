@@ -13,7 +13,7 @@ const userRoute = require('./router');
 mongoose.Promise = global.Promise;
 mongoose
   .connect(
-    `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds159489.mlab.com:59489/${process.env.DB_HOST}`,
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.pcdox.mongodb.net/${process.env.DB_HOST}?retryWrites=true&w=majority`,
     {
       useUnifiedTopology: true,
       useNewUrlParser: true,
